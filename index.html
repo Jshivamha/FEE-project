@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Oswald:wght@500&family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Oswald:wght@500&family=Rubik:wght@300&family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            ;
+        }
+        .redcolor:hover{
+            color: red;
+
+        }
+        .main{
+            width: 100%;
+            /* height: 100vh; */
+            /* background-color: rgba(20, 102, 135, 0.932); */
+            ;
+        }
+        header{
+            background-color: rgba(8, 0, 255, 0);
+            display: flex;
+            flex-direction: column;
+            z-index: 3;
+            position: sticky;
+        }
+        .subheader{
+            background-color: black;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            height: 5rem;
+            /* padding: 0 9rem; */
+        }
+        .keyfeature{
+            border: none;
+            outline: none;
+            background-color: transparent;
+            color: white;
+            font-family: 'Rubik', sans-serif;;
+            font-weight: 1000;
+            /* margin-right: 2rem; */
+            border-bottom: 2px solid rgb(255, 255, 255);
+            padding: .4rem 0;
+            transition: .5s;
+            font-size: 1rem;
+
+        }
+        .gamemechaniccs{
+            border: none;
+            outline: none;
+            background-color: transparent;
+            color: white;
+            font-family: 'Rubik', sans-serif;;
+            font-weight: 1000;
+            margin-right: 15rem;
+            transition: .5s;
+            font-size: 1rem;
+            ;
+        }
+        .subhimg{
+            /* background-color: red; */
+            transform: scale(.5);
+            padding: 0;
+            transition: .5s;
+            ;
+        }
+        .subhimg:hover {
+            transform: scale(.54);
+
+        }
+        .logo{
+            border: 5px solid red;
+            padding: .2rem 1rem;
+            border-radius: 15px 0 8px 0;
+            
+        }
+        nav{
+            background-color: rgba(255, 0, 0, 0);
+            display: flex;
+            justify-content: space-between;
+            padding: 0 2rem;
+            align-items: center;
+            /* color: rgba(255, 255, 255, 0.813); */
+            /* background-color: #0000007a; */
+            position: sticky;
+            width: 100%;
+            font-family: 'Rubik', sans-serif;
+        }
+        ul{
+            background-color: rgba(26, 110, 184, 0);
+            display: flex;
+            list-style: none;
+            padding: 0 2rem;
+            gap: 2rem;
+            font-size: 1.2rem;
+            padding: 1rem 0rem;
+        }
+        li{
+            position: relative;
+            outline: none;
+            border: none;
+            padding: 1rem 1.5rem;
+            ;
+            z-index: 2;
+            /* background-color: blue; */
+            transition: .5s;
+            cursor: pointer;
+        }
+        li::after{
+            content: "";
+            position: absolute;
+            width: 0%;
+            height: 100%;
+            background-color: #dd1d5a;
+            left: 0;
+            bottom: 0;
+            transition: .6s;
+            cursor: pointer;
+            z-index: -1;
+            transform: scale(.7);
+            border-radius: 5px;
+            ;
+        }
+        li:hover::after{
+            width: 100%;
+            ;
+        }
+        .vid video{
+            display: inline-block;
+            vertical-align: baseline;
+            width: 100%;
+            z-index: -1;
+            ;
+        }
+        .vidimg{
+            z-index: 2;
+            background-color: transparent;
+            position: absolute;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            ;
+        }
+        .vidimg img{
+            position: absolute;
+            margin-bottom: 10rem;
+        }
+        .cont{
+            background-image: linear-gradient(to right, #031e46, #1c1431, #1d0d1f, #160610, #000000);
+            color: white;
+            font-family: 'Rubik', sans-serif;
+            font-weight: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            gap: 2rem;
+            flex-direction: column;
+        }
+        .cont span{
+            color: #dd1d5b;
+        }
+        .conthead1{
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            padding: 1rem;
+            font-family: 'Rubik', sans-serif;
+        }
+        .conthead1 h2{
+            /* font-size: 100px; */
+            font-family: 'Oswald', sans-serif;
+            font-size: 4rem;
+        }
+        .conthead1 h4 span{
+            color: red;
+        }
+        .conthead1 a{
+            color: white;
+            font-size: 1rem;
+            ;
+        }
+        .conthead2{
+            display: flex;
+            flex-direction: row;
+            padding: 2rem;
+            gap: 2rem;
+        }
+        .sub1conthead2 ul{
+            /* background-color: red; */
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            width: 50%;
+            gap: 2rem;
+            list-style: none;
+            width: 100%;
+            ;
+        }
+        .sub1conthead2{
+            padding-left: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 6rem;
+
+        }
+        .sub1conthead2 ul li h2{
+            color: red;
+            font-weight: 1000;
+            font-size: 2rem;
+            width: 100%;
+            position: relative;
+        }
+        .sub1conthead2{
+            width: 50%;
+        }
+        .sub2conthead2{
+            /* background-color: red; */
+              overflow: hidden;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 50%;
+            ;
+        }
+        .sub2conthead2 video{
+            width: 100%;   
+            height: 70%;
+        }
+        .buttons1{
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 3rem;
+            ;
+        }
+        .buttons1 button{
+            padding: .8rem 2rem;
+            outline: none;
+            border: none;
+            background-color: transparent;
+            border: .5px solid white;
+            color: white;
+            border-radius: 6px;
+            ;
+        }
+        .conthead3{
+            display: flex;
+            flex-direction: row;
+            /* height: 30rem; */
+            width: 100%;
+            /* background-color: rebeccapurple; */
+        }
+        .sub1conthead3{
+            width: 50%;
+            /* background-color: red; */
+            height: 29rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            height: 80%;
+            width: 80%;
+        }
+        .sub1conthead3 video{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 80%;
+            height: 100%;
+            z-index: 0;
+        }
+        .sub2conthead3{
+            width: 50%;
+            /* background-color: blue; */
+            height: 29rem;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            gap: 7rem;
+            ;
+        }
+        .sub2conthead3 h2{
+            background-color: #dd1d5b;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            width: fit-content;
+            padding:1rem 2rem;
+            z-index: 2;
+            /* margin-top: 5rem; */
+            
+            ;
+        }
+        
+
+
+
+
+        .conthead4{
+            display: flex;
+            flex-direction: row;
+            /* height: 30rem; */
+            width: 100%;
+            /* background-color: rebeccapurple; */
+            text-align: left;
+            ;
+        }
+        .sub2conthead4{
+            width: 50%;
+            /* background-color: red; */
+            height: 29rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            height: 80%;
+            width: 80%;
+        }
+        .sub2conthead4 video{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 80%;
+            height: 100%;
+            z-index: 0;
+        }
+        .sub1conthead4{
+            width: 50%;
+            /* background-color: blue; */
+            height: 29rem;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            gap: 7rem;
+            ;padding: 0 3rem;
+            text-align: right;
+        }
+        .sub1conthead4 h2{
+            background-color: #dd1d5b;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            width: fit-content;
+            padding:1rem 2rem;
+            z-index: 2;
+            margin-left: 10rem;
+            text-align: right;
+            width: 25rem
+            /* margin-top: 5rem; */
+            
+            ;
+        }
+
+
+
+        .conthead5{
+            display: flex;
+            flex-direction: row;
+            /* height: 30rem; */
+            width: 100%;
+            /* background-color: rebeccapurple; */
+        }
+        .sub1conthead5{
+            width: 50%;
+            /* background-color: red; */
+            height: 29rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            height: 80%;
+            width: 80%;
+        }
+        .sub1conthead5 video{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 80%;
+            height: 100%;
+            z-index: 0;
+        }
+        .sub2conthead5{
+            width: 50%;
+            /* background-color: blue; */
+            height: 29rem;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            gap: 7rem;
+            ;
+        }
+        .sub2conthead5 h2{
+            background-color: #dd1d5a;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            width: fit-content;
+            padding:1rem 2rem;
+            z-index: 2;
+            /* margin-top: 5rem; */
+            
+            ;
+        }
+        .cont video{
+            transition: .5s;
+        }
+        .cont video:hover{
+            transform: scale(1.3);
+        }
+
+        
+
+
+
+        
+    </style>
+</head>
+<body>
+    <div class="main">
+        <header>
+            <nav>
+                <h2 class="logo">Logo</h2>
+                <ul class="ul">
+                    <li class="li">Games</li>
+                    <li class="li">Store</li>
+                    <li class="li">Club!</li>
+                    <li class="li">Support</li>
+
+                </ul>
+            </nav>
+            <div class="subheader">
+                <div class="subhimg">
+                    <img src="https://static.bandainamcoent.eu/high/tekken/tekken-8/00-page-setup/tekken8_logo.jpg.png" alt="">
+                </div>
+                <button class="keyfeature redcolor">Key features</button>
+                <button class="gamemechaniccs redcolor">Gameplay Mechanics</button>
+            </div>
+            <div class="banner">
+                <div class="vid">
+                        <!-- <img src="https://static.bandainamcoent.eu/high/tekken/tekken-8/00-page-setup/tekken8_logo.jpg.png" alt=""> -->
+                    <video src="https://static.bandainamcoent.eu/video/tekken8/TKN8-animated-header.webm" loop = "" muted = "" autoplay = "" data-loaded="true"></video>
+                </div>
+                <div class="vidimg">
+                    <img src="https://static.bandainamcoent.eu/high/tekken/tekken-8/00-page-setup/tekken8_logo.jpg.png" alt="">
+                </div>
+            </div>
+        </header>
+        <div class="cont">
+            <div class="conthead1">
+                <h2>TEKKEN 8</h2>
+                <h4><span class="">Release date</span> : TBA    <span>Genres</span> : Fighting    <span>Developer</span> : Bandai Namco Studios inc-TEKKEN Project</h4>
+                <a href="#">Press kit</a>
+            </div>
+            <div class="conthead2">
+                <div class="sub1conthead2">
+                    <ul>
+                        <li>TEKKEN 8, the brand-new entry in the legendary TEKKEN franchise, brings the fight to the new generation!</li>
+                        <li><h2>A Fighter for a New Generation</h2> <br> <p>Powered by Unreal Engine 5 and exclusively available on PS5, Xbox Series X|S, and PC Digital, TEKKEN 8 pushes the limits of new-gen hardware and technologies. The game features high-definition character models built from the ground-up with high-fidelity skin and hair, along with immersive graphics such as muscles that shift to reflect character movement.</p></li>
+                        <li> <h2>New Game, New Rivalry</h2> <br> The TEKKEN series holds the record of being the longest-running story in a video game franchise. Just as the ending dialogue of Tekken 7 mentioned, this new entry will focus on the father and son showdown between Kazuya Mishima and Jin Kazama.</li>
+                        <br>
+                        <br>
+                        <li><p>More info coming soon</p></li>
+                    </ul>
+                    <div class="buttons1">
+                        <button>XBOX SERIES S|X</button>
+                        <button>PC</button>
+                        <button>PS5</button>
+                    </div>
+                </div>
+                <div class="sub2conthead2">
+                    <video src="https://static.bandainamcoent.eu/video/tekken8/TEKKEN8-trailer-autoplay.webm"  loop = "" muted = "" autoplay = "" data-loaded="true"></video>
+                </div>
+            </div>
+            <div class="conthead3">
+                <div class="sub1conthead3">
+                    <video src="https://static.bandainamcoent.eu/video/tekken8/TEKKEN8-KF01.mp4" loop = "" muted = "" autoplay = "" data-loaded="true"></video>
+                </div>
+                    <div class="sub2conthead3">
+                        <h2>New Game, New Rivalry</h2>
+                    <p>This latest saga begins with <span>Jin Kamzaa</span> meeting <span>Kazuya Mishima</span> in a city-shattering face-to-face showdown.</p>
+                </div>
+            </div>
+            <div class="conthead4">
+                <div class="sub1conthead4">
+                    <h2>Exciting New Gameplay</h2>
+                    <p>The latest entry in the series introduces an all-new game mechanic called the <span>"Heat System,"</span> giving players the ability to harness aggressiveness as a tactic and incorporate offensive attacks into their playstyle, with special movements and enhancement of character ability based on <span> each character’s unique features. </span></p>
+                </div>
+                    <div class="sub2conthead4">
+                        <video src="https://static.bandainamcoent.eu/video/tekken8/TEKKEN8-KF02.webm" loop = "" muted = "" autoplay = "" data-loaded="true"></video>
+                </div>
+            </div>
+
+            <div class="conthead5">
+                <div class="sub1conthead5">
+                    <video src="https://static.bandainamcoent.eu/video/tekken8/TEKKEN8-KF03.webm" loop = "" muted = "" autoplay = "" data-loaded="true"></video>
+                </div>
+                    <div class="sub2conthead5">
+                        <h2>An Emotional Return</h2>
+                    <p>After more than 25 years away, <span>Jun Kazama</span> joins TEKKEN 8 as a playable character!</p>
+                </div>
+        </div>
+
+
+
+
+
+        <div class="conthead4">
+            <div class="sub1conthead4">
+                <h2>Iconic characters announced</h2>
+                <p>Include <span>Paul Phoenix, Marshall Law, King, Lars Alexandersson</span> as well as <span>Jack-8.</span></p>
+            </div>
+                <div class="sub2conthead4">
+                    <video src="https://static.bandainamcoent.eu/video/tekken8/TEKKEN8-KF04.webm" loop = "" muted = "" autoplay = "" data-loaded="true"></video>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+</html>
